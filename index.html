@@ -8,11 +8,24 @@
     <title>pedra-papel-tesoura</title>
 </head>
 <body>
-    <h1>Pedra, papel, tesoura</h1>
-    <div class="container">
-        <img src="img/rock.png" onclick="jogar(1)" id="1" alt="">
-        <img src="img/paper.png" onclick="jogar(2)" id="2" alt="">
-        <img src="img/scissors.png" onclick="jogar(3)" id="3" alt="">
+    <h1>Pedra Papel e Tesoura</h1>
+
+    <div class="pontos">
+        <h2>Jogador: <span class="pontos-jogador">0</span></h2>
+        <h2>Computador: <span class="pontos-pc">0</span></h2>
+    </div>
+
+    <div class="maos">
+        <img src="img/rock.png" id="mao-jogador" alt="">
+        <img src="img/rock.png" id="mao-pc" alt="">
+    </div>
+
+    <h2 class="resultado">escolha uma das opções</h2>
+
+    <div class="buttons">
+        <button onclick="jogar(0)">Pedra</button>
+        <button onclick="jogar(1)">Papel</button>
+        <button onclick="jogar(2)">Tesoura</button>
     </div>
 
     <script src="scripts.js"></script>

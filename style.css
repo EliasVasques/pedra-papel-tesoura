@@ -1,43 +1,47 @@
-h1 {
+* {
+    box-sizing: border-box;
     text-align: center;
 }
-
-.escolhido-pc {
-    background-color: aqua;
-}
-.escolhido-jogador {
-    background-color: greenyellow;
+body {
+    margin: 0;
 }
 
-.container {
+.pontos {
     display: flex;
+    justify-content: space-around;
+}
 
-    height: 500px;
+.maos {
+    display: flex;
+    justify-content: space-between;
+}
+#mao-jogador {
+    transform: rotateY(180deg);
+}
+
+.buttons {
+    display: flex;
     justify-content: center;
-    align-items: center;
+}
+.buttons button {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
 }
 
-@media (max-width: 915px){
-    .container img {
-        width: 225px;
+@media (max-width: 650px){
+    .maos img {
+        width: 200px;
     }
 }
-@media (max-width: 680px){
-    .container img {
-        width: 150px;
+@media (max-width: 420px){
+    .maos img {
+        width: 50%;
     }
-}
-@media (max-width: 450px){
-    .container img {
-        width: 33%;
-    }
-}
-@media (max-width: 380px){
-    .container {
+    .pontos {
         flex-wrap: wrap;
-        justify-content: flex-start;
     }
-    .container img {
-        width: 225px;
+    .pontos h2 {
+        width: 100%;
     }
 }
