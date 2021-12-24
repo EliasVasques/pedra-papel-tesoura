@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+}
+
+.escolhido-pc {
+    background-color: aqua;
+}
+.escolhido-jogador {
+    background-color: greenyellow;
+}
+
+.container {
+    display: flex;
+
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 915px){
+    .container img {
+        width: 225px;
+    }
+}
+@media (max-width: 680px){
+    .container img {
+        width: 150px;
+    }
+}
+@media (max-width: 450px){
+    .container img {
+        width: 33%;
+    }
+}
+@media (max-width: 380px){
+    .container {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .container img {
+        width: 225px;
+    }
+}
