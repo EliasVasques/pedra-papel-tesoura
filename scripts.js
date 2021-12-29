@@ -1,27 +1,27 @@
-const img = ['rock.png', 'paper.png', 'scissors.png'];
+const imgSrc = ['rock.png', 'paper.png', 'scissors.png'];
 let pontosJog = 0;
 let pontosPc = 0;
 
-function jogarPc() {
-    let aleat = Math.floor(Math.random() * 3);
-    return aleat;
+function aleatorioUmATres() {
+    return Math.floor(Math.random() * 3);
+}
+function alterarMaos(indiceJogador, indicePc){
+    document.querySelector('#mao-jogador').setAttribute('src', 'img/' + imgSrc[indiceJogador])
+    document.querySelector('#mao-pc').setAttribute('src', 'img/' + imgSrc[indicePc])
 }
 
-function jogar(jogador) {
-    let pc = jogarPc();
-    
-    // mãos
-    document.querySelector('#mao-jogador').setAttribute('src', 'img/' + img[jogador])
-    document.querySelector('#mao-pc').setAttribute('src', 'img/' + img[pc])
+function atualizarTelaResultado(escolhaJogador, escolhaPc) {
+    alterarMaos(escolhaJogador, escolhaPc);
     
     let resultado;
-    if (jogador == pc) {
+    
+    if (escolhaJogador == escolhaPc) { // empate jogador
        resultado = 'Empate!';
-    } else if ((jogador > pc && (jogador != 2 || pc != 0)) ||(jogador == 0 && pc == 2)) {
+    } else if ((escolhaJogador > escolhaPc && (escolhaJogador != 2 || escolhaPc != 0)) ||(escolhaJogador == 0 && escolhaPc == 2)) { // vitória jogador
         resultado = 'Você venceu!';
         pontosJog += 1;
         document.querySelector('.pontos-jogador').innerHTML = pontosJog;
-    }else {
+    }else { // derrota jogador
         resultado = 'Você perdeu!';
         pontosPc += 1;
         document.querySelector('.pontos-pc').innerHTML = pontosPc;
